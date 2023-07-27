@@ -27,10 +27,10 @@ struct DebugTools {
             let betaAction = UIAlertAction(title: "测试环境:\(ApiConst.APIKey.rcURL)", style: .default, handler: { (_) in
                 changeServerAddress(ApiConst.APIKey.rcURL)
             })
-//            let stagingAction = UIAlertAction(title: "预发环境:\(NNApiConst.APIKey.stagingURL)", style: .default, handler: { (_) in
-//                changeServerAddress(NNApiConst.APIKey.stagingURL)
-//                changeAccount(NNApiConst.APIKey.accountStagingURL)
-//                changeWebAddress(NNApiConst.APIKey.webStagingURL)
+//            let stagingAction = UIAlertAction(title: "预发环境:\(ApiConst.APIKey.stagingURL)", style: .default, handler: { (_) in
+//                changeServerAddress(ApiConst.APIKey.stagingURL)
+//                changeAccount(ApiConst.APIKey.accountStagingURL)
+//                changeWebAddress(ApiConst.APIKey.webStagingURL)
 //            })
             let releaseAction = UIAlertAction(title: "正式环境:\(ApiConst.APIKey.appstoreURL)", style: .default, handler: { (_) in
                 changeServerAddress(ApiConst.APIKey.appstoreURL)
