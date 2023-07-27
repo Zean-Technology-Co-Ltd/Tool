@@ -16,7 +16,7 @@ struct DebugTools {
         
         let changeURLAction = UIAlertAction(title: "切换服务器地址", style: .default) { (_) in
             
-            let alertController = UIAlertController(title: "选择地址", message: "当前地址:\(NNApiConst.APIKey.serverURL)", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "选择地址", message: "当前地址:\(ApiConst.APIKey.serverURL)", preferredStyle: .alert)
             let ensureAction = UIAlertAction(title: "确定", style: .default, handler: { [weak alertController] (_) in
                 guard let address = alertController?.textFields?.first?.text else {
                     return
@@ -24,16 +24,16 @@ struct DebugTools {
                 changeServerAddress(address)
                 
             })
-            let betaAction = UIAlertAction(title: "测试环境:\(NNApiConst.APIKey.rcURL)", style: .default, handler: { (_) in
-                changeServerAddress(NNApiConst.APIKey.rcURL)
+            let betaAction = UIAlertAction(title: "测试环境:\(ApiConst.APIKey.rcURL)", style: .default, handler: { (_) in
+                changeServerAddress(ApiConst.APIKey.rcURL)
             })
 //            let stagingAction = UIAlertAction(title: "预发环境:\(NNApiConst.APIKey.stagingURL)", style: .default, handler: { (_) in
 //                changeServerAddress(NNApiConst.APIKey.stagingURL)
 //                changeAccount(NNApiConst.APIKey.accountStagingURL)
 //                changeWebAddress(NNApiConst.APIKey.webStagingURL)
 //            })
-            let releaseAction = UIAlertAction(title: "正式环境:\(NNApiConst.APIKey.appstoreURL)", style: .default, handler: { (_) in
-                changeServerAddress(NNApiConst.APIKey.appstoreURL)
+            let releaseAction = UIAlertAction(title: "正式环境:\(ApiConst.APIKey.appstoreURL)", style: .default, handler: { (_) in
+                changeServerAddress(ApiConst.APIKey.appstoreURL)
             })
             
             alertController.addTextField(configurationHandler: { (textField) in
@@ -55,7 +55,7 @@ struct DebugTools {
     }
     
     static func changeServerAddress(_ address: String) {
-        NNApiConst.APIKey.serverURL = address
+        ApiConst.APIKey.serverURL = address
         NNNavigationManager.sharedInstance.switchRoot(.loginOut)
         exit(0)
     }
