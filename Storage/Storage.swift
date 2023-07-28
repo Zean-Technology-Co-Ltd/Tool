@@ -40,6 +40,18 @@ struct Storage {
         }
     }
     
+    struct TBAuthorization: BoolDefaultSettable {
+        enum BoolKey: String {
+            case tbAuthorization
+        }
+    }
+    
+    struct HaveOrder: BoolDefaultSettable {
+        enum BoolKey: String {
+            case haveOrder
+        }
+    }
+    
 //    struct Building: StringArrayDefaultSettable, DataDefaultSettable {
 //
 //        enum StringArrayKey: RawRepresentable {
