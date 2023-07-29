@@ -96,6 +96,8 @@ extension AccessTokenUpdate {
         Storage.Authorization.set(nil, forKey: .token)
         Storage.Authorization.set(nil, forKey: .user)
         Storage.Authorization.set(nil, forKey: .oauthUser)
+        Storage.HaveOrder.set(false, forKey: .haveOrder)
+        Storage.TBAuthorization.set(false, forKey: .tbAuthorization)
     }
 }
 
