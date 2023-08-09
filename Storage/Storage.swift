@@ -41,8 +41,21 @@ struct Storage {
     }
     
     struct HaveOrder: BoolDefaultSettable {
-        enum BoolKey: String {
-            case haveOrder
+        enum BoolKey: RawRepresentable {
+            init?(rawValue: String) {
+                return nil
+            }
+            
+            typealias RawValue = String
+            
+            case haveOrder(key: String)
+            
+            public var rawValue: RawValue {
+                switch self {
+                case let .haveOrder(key):
+                    return key
+                }
+            }
         }
     }
     
