@@ -80,6 +80,7 @@ public final class RequestAuthorizationPlugin: PluginType, RequestAuthorizationP
                 request.addValue(tokenPrefix + authVal, forHTTPHeaderField: "Authorization")
             }
         }
+        request.timeoutInterval = 30
         request.addValue("iOS", forHTTPHeaderField: "clientType")
         return request
     }

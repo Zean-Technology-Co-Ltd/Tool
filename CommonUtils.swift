@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ATAuthSDK
 
 enum CurrentCarrier: String {
     case chinaMobile = "中国移动"
@@ -37,6 +38,10 @@ class CommonUtils: NSObject {
     
     ///判断运营商
     static public func currentCarrierType(_ moblie: String) -> CurrentCarrier{
-        return isChinaMobile(moblie) ? .chinaMobile: (isChinaUnicom(moblie) ? .chinaUnicom: (isChinaTelecom(moblie) ? .chinaTelecom: .unkonw))
+        let type = CurrentCarrier(rawValue: TXCommonUtils.getCurrentCarrierName()) ?? .unkonw
+        if type == .unkonw {
+            return isChinaMobile(moblie) ? .chinaMobile: (isChinaUnicom(moblie) ? .chinaUnicom: (isChinaTelecom(moblie) ? .chinaTelecom: .unkonw))
+        }
+        return type
     }
 }
