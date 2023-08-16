@@ -78,7 +78,16 @@ extension RequestError: LocalizedError {
             case .stringMapping(let info):
                 return info
             case .underlying(let error, _):
+            let systemError = error as NSError
+            if systemError.code <= -1_001 && systemError.code >= -1_009 {
+                HUD.clear()
+                if systemError.code == -1001 {
+                    return "网络请求超时"
+                }
+                return "网络貌似断开了"
+            } else {
                 return error.localizedDescription
+            }
             case .requestMapping(let info):
                 return info
         }
