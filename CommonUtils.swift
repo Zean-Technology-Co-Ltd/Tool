@@ -38,10 +38,10 @@ class CommonUtils: NSObject {
     
     ///判断运营商
     static public func currentCarrierType(_ moblie: String) -> CurrentCarrier{
-        let type = CurrentCarrier(rawValue: TXCommonUtils.getCurrentCarrierName()) ?? .unkonw
-        if type == .unkonw {
+//        let type = CurrentCarrier(rawValue: TXCommonUtils.getCurrentCarrierName()) ?? .unkonw
+//        if type == .unkonw {
             return isChinaMobile(moblie) ? .chinaMobile: (isChinaUnicom(moblie) ? .chinaUnicom: (isChinaTelecom(moblie) ? .chinaTelecom: .unkonw))
-        }
-        return type
+//        }
+//        return type
     }
 }
