@@ -6,13 +6,14 @@
 //
 
 import UIKit
+import CocoaDebug
 
 #if DEBUG
 struct DebugTools {
     
     static func show(_ nav: UIViewController) {
         
-        let alertController = UIAlertController(title: "开发选项", message: "", preferredStyle: .actionSheet)
+        let alertController = UIAlertController(title: "开发选项", message: nil, preferredStyle: .actionSheet)
         
         let changeURLAction = UIAlertAction(title: "切换服务器地址", style: .default) { (_) in
             
@@ -22,7 +23,6 @@ struct DebugTools {
                     return
                 }
                 changeServerAddress(address)
-                
             })
             let betaAction = UIAlertAction(title: "测试环境:\(ApiConst.APIKey.rcURL)", style: .default, handler: { (_) in
                 changeServerAddress(ApiConst.APIKey.rcURL)
@@ -46,7 +46,11 @@ struct DebugTools {
             nav.present(alertController, animated: true, completion: nil)
         }
         
-        var actions = [changeURLAction]
+        let networkAction = UIAlertAction(title: "设置网络调试工具", style: .default, handler: { (_) in
+            CocoaDebugSettings.shared.showBubbleAndWindow = !CocoaDebugSettings.shared.showBubbleAndWindow
+        })
+        
+        let actions = [changeURLAction, networkAction]
 
         
         alertController.addActionsWithCancel(actions: actions)

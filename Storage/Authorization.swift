@@ -196,6 +196,7 @@ public final class Authorization: NSObject {
             self.user = nil
             self.token = nil
             self.oauthUser = nil
+            self.accessToken = nil
         }
     }
 }

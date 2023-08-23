@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import ATAuthSDK
 
 enum CurrentCarrier: String {
     case chinaMobile = "中国移动"
