@@ -6,7 +6,9 @@
 //
 
 import UIKit
+#if DEBUG
 import CocoaDebug
+#endif
 
 #if DEBUG
 struct DebugTools {
