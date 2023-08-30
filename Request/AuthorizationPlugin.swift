@@ -93,7 +93,7 @@ public final class RequestAuthorizationPlugin: PluginType, RequestAuthorizationP
                     
                     switch requestError {
                     case .statusCode(let statusCode, (let error, _)):
-                        guard statusCode == 401, let processer = unAuthorisedProcesser else { return result }
+                        guard statusCode == 401 || error == "token已被禁止访问", let processer = unAuthorisedProcesser else { return result }
                         // 正常只有 refresh-token 过期, 更新 token 失败时才会进入
                         if let authorizable = target as? AccessTokenAuthorizable,
                            authorizable.tokenExpiredToLogin == true,
