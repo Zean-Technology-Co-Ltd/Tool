@@ -16,21 +16,21 @@ enum CurrentCarrier: String {
 class CommonUtils: NSObject {
     ///判断移动
     static public func isChinaMobile(_ moblie: String) -> Bool{
-        let CM = "(^134[0-8]\\d{7}$)|(^1(3[5-9]|4[7]|5[0-27-9]|6[5]|7[28]|8[2-478]|9[8])\\d{8}$)|(^170[356]\\d{7})"
+        let CM = "(^134[0-8]\\d{7}$)|(^1(3[5-9]|4[478]|5[0-27-9]|6[5]|7[28]|8[2-478]|9[578])\\d{8}$)|(^170[356]\\d{7})"
         let regextestcm = NSPredicate(format: "SELF MATCHES %@", CM)
         return regextestcm.evaluate(with: moblie)
     }
     
     ///判断联通
     static public func isChinaUnicom(_ moblie: String) -> Bool{
-        let CU = "(^1(3[0-2]|4[5]|5[56]|6[67]|7[156]|8[56])\\d{8}$)|(^170[47-9]\\d{7}$)"
+        let CU = "(^1(3[0-2]|4[056]|5[56]|6[67]|7[156]|8[56]|9[6])\\d{8}$)|(^170[47-9]\\d{7}$)"
         let regextestcm = NSPredicate(format: "SELF MATCHES %@", CU)
         return regextestcm.evaluate(with: moblie)
     }
     
     ///判断电信
     static public func isChinaTelecom(_ moblie: String) -> Bool{
-        let CT = "(^1(3[3]|4[9]|5[3]|6[2]|7[37]|8[019]|9[19])\\d{8}$)|(^170[0-2]\\d{7}$)"
+        let CT = "(^1(3[3]|4[19]|5[3]|6[2]|7[0347]|8[019]|9[0139])\\d{8}$)|(^170[0-2]\\d{7}$)"
         let regextestcm = NSPredicate(format: "SELF MATCHES %@", CT)
         return regextestcm.evaluate(with: moblie)
     }

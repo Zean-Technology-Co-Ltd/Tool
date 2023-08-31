@@ -59,6 +59,25 @@ struct Storage {
         }
     }
     
+    struct ZMScoreImage: StringDefaultSettable {
+        enum StringKey: RawRepresentable {
+            init?(rawValue: String) {
+                return nil
+            }
+            
+            typealias RawValue = String
+            
+            case zmScoreImage(key: String?)
+            
+            public var rawValue: RawValue {
+                switch self {
+                case let .zmScoreImage(key):
+                    return "\(key ?? "")-zmScoreImage"
+                }
+            }
+        }
+    }
+    
 //    struct Building: StringArrayDefaultSettable, DataDefaultSettable {
 //
 //        enum StringArrayKey: RawRepresentable {

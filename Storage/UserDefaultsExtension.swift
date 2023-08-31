@@ -30,6 +30,7 @@ extension DataDefaultSettable where DataKey.RawValue == String {
     static func set(_ data: Data?, forKey key: DataKey) {
         let key = namespaced(key)
         UserDefaults.standard.set(data, forKey: key)
+        UserDefaults.standard.synchronize()
     }
 
     static func data(forKey key: DataKey) -> Data? {
@@ -66,6 +67,7 @@ extension StringDefaultSettable where StringKey.RawValue == String {
     static func set(_ string: String?, forKey key: StringKey) {
         let key = namespaced(key)
         UserDefaults.standard.set(string, forKey: key)
+        UserDefaults.standard.synchronize()
     }
 
     static func string(forKey key: StringKey) -> String? {
@@ -85,6 +87,7 @@ extension URLDefaultSettable where URLKey.RawValue == String {
     static func set(_ url: URL?, forKey key: URLKey) {
         let key = namespaced(key)
         UserDefaults.standard.set(url, forKey: key)
+        UserDefaults.standard.synchronize()
     }
 
     static func url(forKey key: URLKey) -> URL? {
@@ -104,6 +107,7 @@ extension IntArrayDefaultSettable where IntArrayKey.RawValue == String {
     static func set(_ intArray: [Int]?, forKey key: IntArrayKey) {
         let key = namespaced(key)
         UserDefaults.standard.set(intArray, forKey: key)
+        UserDefaults.standard.synchronize()
     }
 
     static func intArray(forKey key: IntArrayKey) -> [Int]? {
@@ -132,6 +136,7 @@ extension StringArrayDefaultSettable where StringArrayKey.RawValue == String {
     static func set(_ stringArray: [String]?, forKey key: StringArrayKey) {
         let key = namespaced(key)
         UserDefaults.standard.set(stringArray, forKey: key)
+        UserDefaults.standard.synchronize()
     }
 
     static func stringArray(forKey key: StringArrayKey) -> [String]? {
@@ -160,6 +165,7 @@ extension ArrayDefaultSettable where ArrayKey.RawValue == String {
     static func set(_ array: [Any]?, forKey key: ArrayKey) {
         let key = namespaced(key)
         UserDefaults.standard.set(array, forKey: key)
+        UserDefaults.standard.synchronize()
     }
 
     static func array(forKey key: ArrayKey) -> [Any]? {
@@ -179,6 +185,7 @@ extension ObjectDefaultSettable where ObjectKey.RawValue == String {
     static func set(_ object: Any?, forKey key: ObjectKey) {
         let key = namespaced(key)
         UserDefaults.standard.set(object, forKey: key)
+        UserDefaults.standard.synchronize()
     }
 
     static func object(forKey key: ObjectKey) -> Any? {
@@ -198,6 +205,7 @@ extension BoolDefaultSettable where BoolKey.RawValue == String {
     static func set(_ bool: Bool, forKey key: BoolKey) {
         let key = namespaced(key)
         UserDefaults.standard.set(bool, forKey: key)
+        UserDefaults.standard.synchronize()
     }
 
     static func bool(forKey key: BoolKey) -> Bool {
@@ -236,6 +244,7 @@ extension DoubleDefaultSettable where DoubleKey.RawValue == String {
     static func set(_ double: Double, forKey key: DoubleKey) {
         let key = namespaced(key)
         UserDefaults.standard.set(double, forKey: key)
+        UserDefaults.standard.synchronize()
     }
 
     static func double(forKey key: DoubleKey) -> Double {
@@ -255,6 +264,7 @@ extension FloatDefaultSettable where FloatKey.RawValue == String {
     static func set(_ float: Float, forKey key: FloatKey) {
         let key = namespaced(key)
         UserDefaults.standard.set(float, forKey: key)
+        UserDefaults.standard.synchronize()
     }
 
     static func float(forKey key: FloatKey) -> Float {
