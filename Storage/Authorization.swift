@@ -96,6 +96,7 @@ extension AccessTokenUpdate {
         Storage.Authorization.set(nil, forKey: .token)
         Storage.Authorization.set(nil, forKey: .user)
         Storage.Authorization.set(nil, forKey: .oauthUser)
+        Storage.SaveBaseData.set(nil, forKey: .saveBaseData(ofUserId: "\(Authorization.default.token?.username ?? "0")"))
     }
 }
 
