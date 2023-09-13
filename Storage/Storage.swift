@@ -78,6 +78,25 @@ struct Storage {
         }
     }
     
+    struct SaveBaseData: DataDefaultSettable {
+        enum DataKey: RawRepresentable {
+            case saveBaseData(ofUserId: String)
+            
+            typealias RawValue = String
+            
+            init?(rawValue: RawValue) {
+                return nil
+            }
+            
+            public var rawValue: RawValue {
+                switch self {
+                case let .saveBaseData(ofUserId):
+                    return "\(ofUserId)-UserID"
+                }
+            }
+        }
+    }
+
 //    struct Building: StringArrayDefaultSettable, DataDefaultSettable {
 //
 //        enum StringArrayKey: RawRepresentable {
