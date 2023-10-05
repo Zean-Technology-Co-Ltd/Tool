@@ -22,7 +22,21 @@ struct Storage {
         enum IntegerKey: String {
             case authenticationStatus
         }
+    }
+    
+    struct APP: StringDefaultSettable, BoolDefaultSettable, IntegerDefaultSettable {
+        
+        enum StringKey: String {
+            case appStroreAppVersion
+        }
 
+        enum BoolKey: String {
+            case firstLoginConfig
+        }
+        
+        enum IntegerKey: String {
+            case authenticationStatus
+        }
     }
     
     struct Coordinate: StringDefaultSettable {
