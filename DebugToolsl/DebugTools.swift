@@ -63,7 +63,9 @@ struct DebugTools {
     static func changeServerAddress(_ address: String) {
         ApiConst.APIKey.serverURL = address
         NNNavigationManager.sharedInstance.switchRoot(.loginOut)
-        exit(0)
+        DispatchQueue.main.asyncAfter(wallDeadline: .now() + 0.25) {
+            exit(0)
+        }
     }
 }
 #endif

@@ -8,7 +8,7 @@
 import UIKit
 
 public func topViewController() -> UIViewController{
-    return topViewController(withRootViewController: UIApplication.shared.keyWindow!.rootViewController!)
+    return topViewController(withRootViewController: UIApplication.shared.nn_keyWindow!.rootViewController!)
 }
 
 public func topViewController(withRootViewController rootViewController: UIViewController) -> UIViewController {
